@@ -40,7 +40,7 @@ You can include predefined `String` values within your code as *string literals*
 A string literal is a sequence of characters
 surrounded by double quotation marks (`"`).
 
-Use a string literal as an initial value for a constant or variable:
+Use a string literal as an initial value for a constant or variable.
 
 ```swift
 let someString = "Some string literal value"
@@ -62,7 +62,7 @@ because it's initialized with a string literal value.
 If you need a string that spans several lines,
 use a multiline string literal ---
 a sequence of characters
-surrounded by three double quotation marks:
+surrounded by three double quotation marks.
 
 <!--
   Quote comes from "Alice's Adventures in Wonderland",
@@ -101,7 +101,7 @@ its opening and closing quotation marks.
 The string begins on the first line after the opening quotation marks (`"""`)
 and ends on the line before the closing quotation marks,
 which means that neither of the strings below
-start or end with a line break:
+start or end with a line break.
 
 ```swift
 let singleLineString = "These are the same."
@@ -129,7 +129,7 @@ that line break also appears in the string's value.
 If you want to use line breaks
 to make your source code easier to read,
 but you don't want the line breaks to be part of the string's value,
-write a backslash (`\`) at the end of those lines:
+write a backslash (`\`) at the end of those lines.
 
 ```swift
 let softWrappedQuotation = """
@@ -252,7 +252,7 @@ String literals can include the following special characters:
 The code below shows four examples of these special characters.
 The `wiseWords` constant contains two escaped double quotation marks.
 The `dollarSign`, `blackHeart`, and `sparklingHeart` constants
-demonstrate the Unicode scalar format:
+demonstrate the Unicode scalar format.
 
 ```swift
 let wiseWords = "\"Imagination is more important than knowledge\" - Einstein"
@@ -352,7 +352,7 @@ Here are three more double quotes: """
 To create an empty `String` value as the starting point
 for building a longer string,
 either assign an empty string literal to a variable
-or initialize a new `String` instance with initializer syntax:
+or initialize a new `String` instance with initializer syntax.
 
 ```swift
 var emptyString = ""               // empty string literal
@@ -372,7 +372,7 @@ var anotherEmptyString = String()  // initializer syntax
 -->
 
 Find out whether a `String` value is empty
-by checking its Boolean `isEmpty` property:
+by checking its Boolean `isEmpty` property.
 
 ```swift
 if emptyString.isEmpty {
@@ -400,7 +400,7 @@ if emptyString.isEmpty {
 
 You indicate whether a particular `String` can be modified (or *mutated*)
 by assigning it to a variable (in which case it can be modified),
-or to a constant (in which case it can't be modified):
+or to a constant (in which case it can't be modified).
 
 ```swift
 var variableString = "Horse"
@@ -473,7 +473,7 @@ when working with strings as value types.
 ## Working with Characters
 
 You can access the individual `Character` values for a `String`
-by iterating over the string with a `for`-`in` loop:
+by iterating over the string with a `for`-`in` loop.
 
 ```swift
 for character in "Dog!🐶" {
@@ -504,7 +504,7 @@ for character in "Dog!🐶" {
 The `for`-`in` loop is described in <doc:ControlFlow#For-In-Loops>.
 
 Alternatively, you can create a stand-alone `Character` constant or variable
-from a single-character string literal by providing a `Character` type annotation:
+from a single-character string literal by providing a `Character` type annotation.
 
 ```swift
 let exclamationMark: Character = "!"
@@ -519,7 +519,7 @@ let exclamationMark: Character = "!"
 -->
 
 `String` values can be constructed by passing an array of `Character` values
-as an argument to its initializer:
+as an argument to its initializer.
 
 ```swift
 let catCharacters: [Character] = ["C", "a", "t", "!", "🐱"]
@@ -542,7 +542,7 @@ print(catString)
 ## Concatenating Strings and Characters
 
 `String` values can be added together (or *concatenated*)
-with the addition operator (`+`) to create a new `String` value:
+with the addition operator (`+`) to create a new `String` value.
 
 ```swift
 let string1 = "hello"
@@ -564,7 +564,7 @@ var welcome = string1 + string2
 -->
 
 You can also append a `String` value to an existing `String` variable
-with the addition assignment operator (`+=`):
+with the addition assignment operator (`+=`).
 
 ```swift
 var instruction = "look over"
@@ -584,7 +584,7 @@ instruction += string2
 -->
 
 You can append a `Character` value to a `String` variable
-with the `String` type's `append()` method:
+with the `String` type's `append()` method.
 
 ```swift
 let exclamationMark: Character = "!"
@@ -687,7 +687,7 @@ by including their values inside a string literal.
 You can use string interpolation
 in both single-line and multiline string literals.
 Each item that you insert into the string literal is wrapped in
-a pair of parentheses, prefixed by a backslash (`\`):
+a pair of parentheses, prefixed by a backslash (`\`).
 
 ```swift
 let multiplier = 3
@@ -802,7 +802,7 @@ a Unicode-aware text-rendering system.
 In both cases, the letter `é` is represented as a single Swift `Character` value
 that represents an extended grapheme cluster.
 In the first case, the cluster contains a single scalar;
-in the second case, it's a cluster of two scalars:
+in the second case, it's a cluster of two scalars.
 
 ```swift
 let eAcute: Character = "\u{E9}"                         // é
@@ -828,7 +828,7 @@ Extended grapheme clusters are a flexible way to represent
 many complex script characters as a single `Character` value.
 For example, Hangul syllables from the Korean alphabet
 can be represented as either a precomposed or decomposed sequence.
-Both of these representations qualify as a single `Character` value in Swift:
+Both of these representations qualify as a single `Character` value in Swift.
 
 ```swift
 let precomposed: Character = "\u{D55C}"                  // 한
@@ -851,7 +851,7 @@ let decomposed: Character = "\u{1112}\u{1161}\u{11AB}"   // ᄒ, ᅡ, ᆫ
 
 Extended grapheme clusters enable
 scalars for enclosing marks (such as `COMBINING ENCLOSING CIRCLE`, or `U+20DD`)
-to enclose other Unicode scalars as part of a single `Character` value:
+to enclose other Unicode scalars as part of a single `Character` value.
 
 ```swift
 let enclosedEAcute: Character = "\u{E9}\u{20DD}"
@@ -872,7 +872,7 @@ let enclosedEAcute: Character = "\u{E9}\u{20DD}"
 Unicode scalars for regional indicator symbols
 can be combined in pairs to make a single `Character` value,
 such as this combination of `REGIONAL INDICATOR SYMBOL LETTER U` (`U+1F1FA`)
-and `REGIONAL INDICATOR SYMBOL LETTER S` (`U+1F1F8`):
+and `REGIONAL INDICATOR SYMBOL LETTER S` (`U+1F1F8`).
 
 ```swift
 let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
@@ -893,7 +893,7 @@ let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
 ## Counting Characters
 
 To retrieve a count of the `Character` values in a string,
-use the `count` property of the string:
+use the `count` property of the string.
 
 ```swift
 let unusualMenagerie = "Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪"
@@ -918,7 +918,7 @@ a string's character count.
 For example, if you initialize a new string with the four-character word `cafe`,
 and then append a `COMBINING ACUTE ACCENT` (`U+0301`) to the end of the string,
 the resulting string will still have a character count of `4`,
-with a fourth character of `é`, not `e`:
+with a fourth character of `é`, not `e`.
 
 ```swift
 var word = "cafe"
@@ -1134,7 +1134,7 @@ welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex)
 To remove a single character from a string at a specified index,
 use the `remove(at:)` method,
 and to remove a substring at a specified range,
-use the `removeSubrange(_:)` method:
+use the `removeSubrange(_:)` method.
 
 ```swift
 welcome.remove(at: welcome.index(before: welcome.endIndex))
@@ -1265,7 +1265,7 @@ string and character equality, prefix equality, and suffix equality.
 
 String and character equality is checked with the “equal to” operator (`==`)
 and the “not equal to” operator (`!=`),
-as described in <doc:BasicOperators#Comparison-Operators>:
+as described in <doc:BasicOperators#Comparison-Operators>.
 
 ```swift
 let quotation = "We're a lot alike, you and I."
@@ -1329,7 +1329,7 @@ For example, `LATIN SMALL LETTER E WITH ACUTE` (`U+00E9`)
 is canonically equivalent to `LATIN SMALL LETTER E` (`U+0065`)
 followed by `COMBINING ACUTE ACCENT` (`U+0301`).
 Both of these extended grapheme clusters are valid ways to represent the character `é`,
-and so they're considered to be canonically equivalent:
+and so they're considered to be canonically equivalent.
 
 ```swift
 // "Voulez-vous un café?" using LATIN SMALL LETTER E WITH ACUTE
@@ -1366,7 +1366,7 @@ as used in English, is *not* equivalent to
 `CYRILLIC CAPITAL LETTER A` (`U+0410`, or `"А"`),
 as used in Russian.
 The characters are visually similar,
-but don't have the same linguistic meaning:
+but don't have the same linguistic meaning.
 
 ```swift
 let latinCapitalLetterA: Character = "\u{41}"
@@ -1451,7 +1451,7 @@ both of which take a single argument of type `String` and return a Boolean value
 -->
 
 The examples below consider an array of strings representing
-the scene locations from the first two acts of Shakespeare's *Romeo and Juliet*:
+the scene locations from the first two acts of Shakespeare's *Romeo and Juliet*.
 
 ```swift
 let romeoAndJuliet = [
@@ -1490,7 +1490,7 @@ let romeoAndJuliet = [
 -->
 
 You can use the `hasPrefix(_:)` method with the `romeoAndJuliet` array
-to count the number of scenes in Act 1 of the play:
+to count the number of scenes in Act 1 of the play.
 
 ```swift
 var act1SceneCount = 0
@@ -1519,7 +1519,7 @@ print("There are \(act1SceneCount) scenes in Act 1")
 -->
 
 Similarly, use the `hasSuffix(_:)` method to count the number of scenes
-that take place in or around Capulet's mansion and Friar Lawrence's cell:
+that take place in or around Capulet's mansion and Friar Lawrence's cell.
 
 ```swift
 var mansionCount = 0
@@ -1585,7 +1585,7 @@ in one of three other Unicode-compliant representations:
 Each example below shows a different representation of the following string,
 which is made up of the characters `D`, `o`, `g`,
 `‼` (`DOUBLE EXCLAMATION MARK`, or Unicode scalar `U+203C`),
-and the 🐶 character (`DOG FACE`, or Unicode scalar `U+1F436`):
+and the 🐶 character (`DOG FACE`, or Unicode scalar `U+1F436`).
 
 ```swift
 let dogString = "Dog‼🐶"
@@ -1605,7 +1605,7 @@ You can access a UTF-8 representation of a `String`
 by iterating over its `utf8` property.
 This property is of type `String.UTF8View`,
 which is a collection of unsigned 8-bit (`UInt8`) values,
-one for each byte in the string's UTF-8 representation:
+one for each byte in the string's UTF-8 representation.
 
 ![](UTF8)
 
@@ -1659,7 +1659,7 @@ You can access a UTF-16 representation of a `String`
 by iterating over its `utf16` property.
 This property is of type `String.UTF16View`,
 which is a collection of unsigned 16-bit (`UInt16`) values,
-one for each 16-bit code unit in the string's UTF-16 representation:
+one for each 16-bit code unit in the string's UTF-16 representation.
 
 ![](UTF16)
 
@@ -1713,7 +1713,7 @@ This property is of type `UnicodeScalarView`,
 which is a collection of values of type `UnicodeScalar`.
 
 Each `UnicodeScalar` has a `value` property that returns
-the scalar's 21-bit value, represented within a `UInt32` value:
+the scalar's 21-bit value, represented within a `UInt32` value.
 
 ![](UnicodeScalar)
 
@@ -1757,7 +1757,7 @@ which represents the Unicode scalar `U+1F436` for the `DOG FACE` character.
 
 As an alternative to querying their `value` properties,
 each `UnicodeScalar` value can also be used to construct a new `String` value,
-such as with string interpolation:
+such as with string interpolation.
 
 ```swift
 for scalar in dogString.unicodeScalars {

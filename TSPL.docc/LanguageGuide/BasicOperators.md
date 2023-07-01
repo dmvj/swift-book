@@ -51,7 +51,7 @@ and its two operands are the values `1` and `2`.
 ## Assignment Operator
 
 The *assignment operator* (`a = b`)
-initializes or updates the value of `a` with the value of `b`:
+initializes or updates the value of `a` with the value of `b`.
 
 ```swift
 let b = 10
@@ -73,7 +73,7 @@ a = b
 -->
 
 If the right side of the assignment is a tuple with multiple values,
-its elements can be decomposed into multiple constants or variables at once:
+its elements can be decomposed into multiple constants or variables at once.
 
 ```swift
 let (x, y) = (1, 2)
@@ -109,7 +109,7 @@ let (x, y) = (1, 2)
 
 Unlike the assignment operator in C and Objective-C,
 the assignment operator in Swift doesn't itself return a value.
-The following statement isn't valid:
+The following statement isn't valid.
 
 ```swift
 if x = y {
@@ -183,7 +183,7 @@ the Swift arithmetic operators don't allow values to overflow by default.
 You can opt in to value overflow behavior by using Swift's overflow operators
 (such as `a &+ b`). See <doc:AdvancedOperators#Overflow-Operators>.
 
-The addition operator is also supported for `String` concatenation:
+The addition operator is also supported for `String` concatenation.
 
 ```swift
 "hello, " + "world"  // equals "hello, world"
@@ -228,7 +228,7 @@ and returns the value that's left over
 -->
 
 Here's how the remainder operator works.
-To calculate `9 % 4`, you first work out how many `4`s will fit inside `9`:
+To calculate `9 % 4`, you first work out how many `4`s will fit inside `9`.
 
 ![](remainderInteger)
 
@@ -263,7 +263,7 @@ Inserting `9` and `4` into this equation yields:
 
 `9` = (`4` x `2`) + `1`
 
-The same method is applied when calculating the remainder for a negative value of `a`:
+The same method is applied when calculating the remainder for a negative value of `a`.
 
 ```swift
 -9 % 4   // equals -1
@@ -291,7 +291,7 @@ This means that `a % b` and `a % -b` always give the same answer.
 ### Unary Minus Operator
 
 The sign of a numeric value can be toggled using a prefixed `-`,
-known as the *unary minus operator*:
+known as the *unary minus operator*.
 
 ```swift
 let three = 3
@@ -315,7 +315,7 @@ without any white space.
 ### Unary Plus Operator
 
 The *unary plus operator* (`+`) simply returns
-the value it operates on, without any change:
+the value it operates on, without any change.
 
 ```swift
 let minusSix = -6
@@ -339,7 +339,7 @@ when also using the unary minus operator for negative numbers.
 ## Compound Assignment Operators
 
 Like C, Swift provides *compound assignment operators* that combine assignment (`=`) with another operation.
-One example is the *addition assignment operator* (`+=`):
+One example is the *addition assignment operator* (`+=`).
 
 ```swift
 var a = 1
@@ -383,7 +383,7 @@ Swift supports the following comparison operators:
 > which you use to test whether two object references both refer to the same object instance.
 > For more information, see <doc:ClassesAndStructures#Identity-Operators>.
 
-Each of the comparison operators returns a `Bool` value to indicate whether or not the statement is true:
+Each of the comparison operators returns a `Bool` value to indicate whether or not the statement is true.
 
 ```swift
 1 == 1   // true because 1 is equal to 1
@@ -420,7 +420,7 @@ Each of the comparison operators returns a `Bool` value to indicate whether or n
 -->
 
 Comparison operators are often used in conditional statements,
-such as the `if` statement:
+such as the `if` statement.
 
 ```swift
 let name = "world"
@@ -598,7 +598,7 @@ if question {
 
 Here's an example, which calculates the height for a table row.
 The row height should be 50 points taller than the content height
-if the row has a header, and 20 points taller if the row doesn't have a header:
+if the row has a header, and 20 points taller if the row doesn't have a header.
 
 ```swift
 let contentHeight = 40
@@ -698,7 +698,7 @@ this conditional checking and unwrapping in a concise and readable form.
 > This is known as *short-circuit evaluation*.
 
 The example below uses the nil-coalescing operator to choose between
-a default color name and an optional user-defined color name:
+a default color name and an optional user-defined color name.
 
 ```swift
 let defaultColorName = "red"
@@ -733,7 +733,7 @@ the value of `defaultColorName`, or `"red"`.
 
 If you assign a non-`nil` value to `userDefinedColorName`
 and perform the nil-coalescing operator check again,
-the value wrapped inside `userDefinedColorName` is used instead of the default:
+the value wrapped inside `userDefinedColorName` is used instead of the default.
 
 ```swift
 userDefinedColorName = "green"
@@ -793,7 +793,7 @@ The value of `a` must not be greater than `b`.
 
 The closed range operator is useful when iterating over a range
 in which you want all of the values to be used,
-such as with a `for`-`in` loop:
+such as with a `for`-`in` loop.
 
 ```swift
 for index in 1...5 {
@@ -864,7 +864,7 @@ then the resulting range will be empty.
 
 Half-open ranges are particularly useful when you work with
 zero-based lists such as arrays,
-where it's useful to count up to (but not including) the length of the list:
+where it's useful to count up to (but not including) the length of the list.
 
 ```swift
 let names = ["Anna", "Alex", "Brian", "Jack"]
@@ -1073,8 +1073,8 @@ the second value won't even be evaluated,
 because it can't possibly make the overall expression equate to `true`.
 This is known as *short-circuit evaluation*.
 
-This example considers two `Bool` values
-and only allows access if both values are `true`:
+The next example considers two `Bool` values
+and only allows access if both values are `true`.
 
 ```swift
 let enteredDoorCode = true
@@ -1121,7 +1121,7 @@ the first `Bool` value (`hasDoorKey`) is `false`,
 but the second value (`knowsOverridePassword`) is `true`.
 Because one value is `true`,
 the overall expression also evaluates to `true`,
-and access is allowed:
+and access is allowed.
 
 ```swift
 let hasDoorKey = false
@@ -1151,7 +1151,7 @@ if hasDoorKey || knowsOverridePassword {
 
 ### Combining Logical Operators
 
-You can combine multiple logical operators to create longer compound expressions:
+You can combine multiple logical operators to create longer compound expressions.
 
 ```swift
 if enteredDoorCode && passedRetinaScan || hasDoorKey || knowsOverridePassword {
@@ -1200,7 +1200,7 @@ It's sometimes useful to include parentheses when they're not strictly needed,
 to make the intention of a complex expression easier to read.
 In the door access example above,
 it's useful to add parentheses around the first part of the compound expression
-to make its intent explicit:
+to make its intent explicit.
 
 ```swift
 if (enteredDoorCode && passedRetinaScan) || hasDoorKey || knowsOverridePassword {
